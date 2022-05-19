@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: springbootwarexample 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springbootwarexample
+  template:
+    metadata:
+      labels:
+        app: springbootwarexample 
+    spec:
+      containers:
+        - name: springbootwarexample 
+          image: dockeraz.azurecr.io/springbootwarexample
+          ports:
+          - containerPort: 80
